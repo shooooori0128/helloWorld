@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: './src/index.ts',
+  entry: './src/function.ts',
 
   externals: [nodeExternals()],
 
@@ -33,7 +33,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/build',
-    filename: 'index.js',
+    filename: 'function.js',
     libraryTarget: 'commonjs'
   }
 };
