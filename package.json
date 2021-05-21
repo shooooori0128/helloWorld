@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint --ext .ts --ignore-path .gitignore ./src",
     "lint:fix": "eslint --fix --ext .ts --ignore-path .gitignore ./src",
-    "transpile": "webpack --entry=./src/helloWorld.ts"
+    "transpile": "webpack --entry=./src/index.ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.24.0",
