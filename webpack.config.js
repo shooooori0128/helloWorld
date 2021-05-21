@@ -32,7 +32,7 @@ module.exports = {
   },
 
   output: {
-    path: __dirname + '/build',
+    path: __dirname + '/functions',
     filename: 'index.js',
     libraryTarget: 'commonjs'
   }
