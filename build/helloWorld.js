@@ -1,0 +1,1 @@
+(()=>{"use strict";var e={273:e=>{e.exports={helloWorld:function(e,r){var o=e.query.message||e.body.message||"Hello World!";r.status(200).send(o)}}}},r={},o=function o(s){var t=r[s];if(void 0!==t)return t.exports;var u=r[s]={exports:{}};return e[s](u,u.exports,o),u.exports}(273),s=exports;for(var t in o)s[t]=o[t];o.__esModule&&Object.defineProperty(s,"__esModule",{value:!0})})();

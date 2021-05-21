@@ -1,0 +1,5 @@
+# GCP Cloud Functionのサンプル
+
+TypeScriptで記述したコードをwebpackでjsファイルへトランスパイルし、GCPCloudFunctionでも利用できるようにしたサンプルです。
+
+CloudSourceRepositoriesからCloudFunctionへ自動でデプロイされるようになっています（予定）
