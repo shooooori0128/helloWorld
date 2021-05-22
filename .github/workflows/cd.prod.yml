@@ -9,15 +9,13 @@ jobs:
   deploy:
     name: deploy-to-gcf
     runs-on: ubuntu-latest
-    env:
-      FUNCTION_NAME: helloWorld
-      REGION: asia-northeast1
-      RUNTIME: nodejs14
     steps:
       - uses: actions/checkout@v2
-      - uses: google-github-actions/setup-gcloud@master
+      - id: deploy
+        uses: google-github-actions/deploy-cloud-functions@main
         with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.HELLOWOLRD_DEPLOY_TO_GCF }}
-      - name: deploy
-        run: gcloud functions deploy ${FUNCTION_NAME} --region ${REGION} --runtime ${RUNTIME} --source './functions' --entry-point ${FUNCTION_NAME} --trigger-http
+          name: helloWorld
+          runtime: nodejs14
+          credentials: ${{ secrets.gcp_credentials }}
+          region: asia-northeast1
+          source_dir: functions
