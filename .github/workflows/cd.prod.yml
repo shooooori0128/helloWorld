@@ -20,4 +20,4 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.HELLOWOLRD_DEPLOY_TO_GCF }}
       - name: deploy
-        run: gcloud functions deploy ${FUNCTION_NAME} --source ./functions --region=${REGION} --runtime=${RUNTIME} --trigger-http
+        run: gcloud functions deploy ${FUNCTION_NAME} --region=${REGION} --runtime=${RUNTIME} --source './functions' --trigger-http
