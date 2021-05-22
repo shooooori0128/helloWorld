@@ -19,6 +19,6 @@ jobs:
         with:
           project_id: trial-nishizawa
           service_account_email: gcp.shori0128@gmail.com
-          service_account_key: ${{ secrets.Secretの名前 }}
+          service_account_key: HELLOWOLRD_DEPLOY_TO_GCF
       - name: deploy
         run: gcloud functions deploy ${FUNCTION_NAME} --source ./functions --region=${REGION} --runtime=${RUNTIME} --trigger-http
