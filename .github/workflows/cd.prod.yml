@@ -1,0 +1,24 @@
+name: deploy-to-gcf-production
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "functions/**"
+jobs:
+  deploy:
+    name: deploy-to-gcf
+    runs-on: ubuntu-latest
+    env:
+      FUNCTION_NAME: helloWorld
+      REGION: asia-northeast1
+      RUNTIME: nodejs14
+    steps:
+      - uses: actions/checkout@v2
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: trial-nishizawa
+          service_account_email: gcp.shori0128@gmail.com
+          service_account_key: ${{ secrets.Secretの名前 }}
+      - name: deploy
+        run: gcloud functions deploy ${FUNCTION_NAME} --source ./functions --region=${REGION} --runtime=${RUNTIME} --trigger-http
