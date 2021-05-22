@@ -11,14 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: google-github-actions/setup-gcloud@master
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.HELLOWOLRD_DEPLOY_TO_GCF }}
       - id: deploy
         uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: helloWorld
           runtime: nodejs14
+          credentials: ${{ secrets.HELLOWOLRD_DEPLOY_TO_GCF }}
           region: asia-northeast1
           source_dir: functions
