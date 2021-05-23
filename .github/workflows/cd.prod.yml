@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Transpile
-        run: yarn transpile
+        run: yarn build:prod
       - name: Deploy to production
         uses: google-github-actions/deploy-cloud-functions@main
         with:
