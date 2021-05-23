@@ -1,5 +1,5 @@
 function helloWorld(req: any, res: any) {
-  const message: string = req.query.message || req.body.message || 'Hello ほげもが!';
+  const message: string = req.query.message || req.body.message || 'Hello ふがががががが!';
   res.status(200).send(message);
 }
 
