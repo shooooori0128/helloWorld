@@ -21,8 +21,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn --frozen-lockfile
+      - name: ESLint
+        run: yarn lint
       - name: Transpile
-        run: yarn build:prod
+        run: yarn build
       - name: Deploy to production
         uses: google-github-actions/deploy-cloud-functions@main
         with:
