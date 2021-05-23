@@ -10,8 +10,11 @@ jobs:
     name: deploy-to-gcf
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - id: deploy
+      - name: checkout repository
+        uses: actions/checkout@v2
+      - name: transpile
+        run: yarn transpile
+      - name: deploy to production
         uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: helloWorld
