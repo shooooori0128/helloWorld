@@ -5,10 +5,12 @@
   "scripts": {
     "lint": "eslint --ext .ts --ignore-path .gitignore ./src",
     "lint:fix": "eslint --fix --ext .ts --ignore-path .gitignore ./src",
-    "build:dev": "mkdir functions | webpack --entry=./src/index.ts",
-    "build:prod": "mkdir functions | webpack --entry=./src/index.ts | cp package.json functions"
+    "build": "mkdir functions ; webpack --entry=./src/index.ts && cp package.json functions",
+    "dev": "npx functions-framework --source=functions --target=helloWorld",
+    "start": "yarn build && yarn dev"
   },
   "devDependencies": {
+    "@google-cloud/functions-framework": "^1.7.1",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.26.0",
