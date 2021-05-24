@@ -1,8 +1,7 @@
-function helloWorld(req: any, res: any) {
-  const message: string = req.query.message || req.body.message || 'Hello Nishizawasan!!!';
-  res.status(200).send(message);
-}
+import { Request, Response } from 'express';
 
-module.exports = {
-  helloWorld: helloWorld
+export const helloWorld = (req: Request, res: Response): void => {
+  const message: string = req.query.message || req.body.message || 'Hello world!!!';
+
+  res.status(200).send(message);
 }
